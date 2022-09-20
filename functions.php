@@ -141,8 +141,9 @@ function caris_sell_homes_scripts() {
 
 	wp_enqueue_style('caris-sell-homes-bootstrap-min', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '20151215');
 	wp_enqueue_style('caris-sell-homes-animate', get_template_directory_uri() . '/assets/css/animate.min.css', array(), '20151215');
-	wp_enqueue_style('caris-sell-homes-slick', get_template_directory_uri() . '/assets/css/slick.css', array(), '20151215');
-	wp_enqueue_style('caris-sell-homes-slick-theme', get_template_directory_uri() . '/assets/css/slick-theme.css', array(), '20151215');
+	wp_enqueue_style('caris-sell-homes-swiper-css', get_template_directory_uri() . '/assets/css/swiper-bundle.min.css', array(), '20151215');
+	//wp_enqueue_style('caris-sell-homes-slick', get_template_directory_uri() . '/assets/css/slick.css', array(), '20151215');
+	//wp_enqueue_style('caris-sell-homes-slick-theme', get_template_directory_uri() . '/assets/css/slick-theme.css', array(), '20151215');
 	wp_enqueue_style('caris-sell-homes-fancybox-min', get_template_directory_uri() . '/assets/css/jquery.fancybox.min.css', array(), '20151215');
 	wp_enqueue_style('caris-sell-homes-simplebar-css', get_template_directory_uri() . '/assets/css/simplebar.css', array(), '20151215');
 	//wp_enqueue_style('caris-sell-homes-sticky', get_template_directory_uri() . '/assets/css/sticky.css', array(), '20151215');
@@ -153,7 +154,7 @@ function caris_sell_homes_scripts() {
 
 	wp_enqueue_script('caris-sell-homes-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '20151215', true);
 	wp_enqueue_script('caris-sell-homes-simplebar-js', get_template_directory_uri() . '/assets/js/simplebar.js', array(), '20151215', true);
-	wp_enqueue_script('caris-sell-homes-slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), '20151215', true);
+	wp_enqueue_script('caris-sell-homes-swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '20151215', true);
 	wp_enqueue_script('caris-sell-homes-fancybox-min', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', array(), '20151215', true);
 	wp_enqueue_script('caris-sell-homes-wow-min', get_template_directory_uri() . '/assets/js/wow.min.js', array(), '20151215', true);
 	wp_enqueue_script('caris-sell-homes-font-awesome-min', get_template_directory_uri() . '/assets/js/font-awesome.min.js', array(), '20151215', true);

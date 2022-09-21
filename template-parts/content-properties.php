@@ -198,14 +198,14 @@
                 <div class="col-lg-6">
                     <div class="plan-feature-list">
                         <ul>
-                            <li>Large kitchen island</li>
-                            <li>Large kitchen island <span>(or home office option)</span></li>
-                            <li>Large kitchen island</li>
-                            <li>Large kitchen island <span>(or home office option)</span></li>
-                            <li>Large kitchen island</li>
-                            <li>Large kitchen island <span>(or home office option)</span></li>
-                            <li>Large kitchen island</li>
-                            <li>Large kitchen island <span>(or home office option)</span></li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
+                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
                         </ul>
                     </div>
                 </div>

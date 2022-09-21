@@ -622,6 +622,11 @@ textarea {
   height: 100%;
 }
 
+.main-navigation ul li.current-menu-item a, .main-navigation ul li a:hover {
+    color: var(--primary-color);
+}
+
+
 .main-navigation a {
   height: 100%;
   display: flex;

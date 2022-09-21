@@ -24,6 +24,7 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+	<?php global $phone,$phone_link; ?>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" title="Skip to content" href="#primary"><?php esc_html_e('Skip to content', 'caris-sell-homes'); ?></a>
 
@@ -57,13 +58,6 @@
 								</div>
 							</nav>
 							<div class="header-btn">
-								<?php
-								$phone = get_field('phone_number','option');
-								$val = array("(", ")", " ", "-", ".");
-								$replace = array("", "", "", "", "");
-								//Phone link
-								$phone_link = str_replace($val, $replace, $phone);
-								?>
 								<a href="tel:<?php echo $phone_link; ?>" class="sec-btn btn-transparent" title="Call now <?php echo $phone; ?>">Call now</a>
 							</div>
 						</div>

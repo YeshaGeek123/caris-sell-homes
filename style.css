@@ -1335,7 +1335,7 @@ p {
   line-height: 30px;
   font-weight: 300;
   color: var(--dark-color);
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 h1,
@@ -1387,6 +1387,15 @@ a:hover {
   color: var(--dark-color);
   margin-bottom: 0;
 }
+
+.h4-title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  color: var(--dark-color);
+  margin-bottom: 0;
+}
+
 
 .grecaptcha-badge {
   display: none !important;
@@ -2119,10 +2128,23 @@ button.close:hover {
 .about-us-text {
   height: 443px;
   margin-top: 30px;
+  padding-right: 70px;
 }
 
+.about-us-text .simplebar-scrollbar {
+    height: 17px !important;
+    width: 17px !important;
+    left: -9px;
+}
+
+.about-us-text .simplebar-track.vertical {
+    margin-right: 10px;
+    width: 1px;
+    background: var(--primary-color);
+}
 .about-us-content {
   margin-left: 70px;
+  padding-right: 9px;
 }
 .main-about-us:before {
   content: "";
@@ -2132,7 +2154,6 @@ button.close:hover {
   width: 100%;
   height: 100%;
   background-image: url(assets/images/about-us-floorplan.png);
-  opacity: 0.3;
   z-index: 0;
   background-size: cover;
   background-position: center;
@@ -2169,7 +2190,7 @@ span.small-text {
   background: var(--light-color);
 }
 
-.featured-home-btn .sec-btn {
+.featured-home-btn .sec-btn, .main-gallery .sec-btn {
   width: 228px;
   height: 75px;
 }
@@ -2194,12 +2215,10 @@ span.small-text {
 }
 
 .floor-plan-card {
-  height: 478px;
-  margin-right: 20px;
+  height: 441px;
   padding: 4px 20px 33px 40px;
   position: relative;
   background-color: var(--white-color);
-  box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
   overflow: hidden;
   transition: 0.4s;
 }
@@ -2220,7 +2239,7 @@ span.small-text {
   height: auto;
   overflow: hidden;
   transition: 0.4s;
-  transform: translate(0, 142%);
+  transform: translate(0, 128%);
   z-index: 1;
 }
 
@@ -2291,12 +2310,19 @@ span.small-text {
   background: linear-gradient(0deg, rgb(18 50 41 / 100%), rgb(18 50 41 / 0));
   opacity: 1;
 }
-.swiper.floor-plans-slider {
-  width: calc(100% + 26vw);
+.floor-plan-slider-wp .swiper-container {
+  width: calc(100% + 20vw);
 }
 
 .swiper.floor-plans-slider {
   padding-bottom: 120px;
+}
+
+.swiper-horizontal>.swiper-scrollbar {
+    bottom: 98px;
+    background: var(--primary-color);
+    opacity: 1 !important;
+    height: 1px;
 }
 
 .swiper-dots.for-des {
@@ -2309,6 +2335,7 @@ span.small-text {
 .swiper-button-prev:after,
 .swiper-button-next:after {
   content: none;
+  background-image: none;
 }
 
 .swiper-button-prev,
@@ -2318,7 +2345,8 @@ span.small-text {
   width: 87px;
   z-index: 2;
   top: 43px;
-  left: 0;
+  left: 95px;
+  background-image: none;
 }
 
 .swiper-button-prev .icon-box,
@@ -2328,6 +2356,7 @@ span.small-text {
   width: 100%;
   background: var(--white-color);
   border: 1px solid var(--primary-color);
+  display: flex;
 }
 
 .icon-box:before {
@@ -2335,8 +2364,8 @@ span.small-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 1px;
-  width: 30px;
+  height: 2px;
+  width: 16px;
   transform: translate(-50%, -50%);
   background-color: var(--primary-color);
 }
@@ -2348,14 +2377,14 @@ span.small-text {
   width: 10px;
   transform: translate(0, -50%) rotate(135deg);
   background: transparent;
-  border-left: 1px solid var(--primary-color);
-  border-top: 1px solid var(--primary-color);
-  left: 48px;
+  border-left: 2px solid var(--primary-color);
+  border-top: 2px solid var(--primary-color);
+  left: 40px;
   top: 50%;
 }
 
 .swiper-button-prev .icon-box:after {
-  left: 18px;
+  left: 25px;
   transform: translate(10px, -50%) rotate(313deg);
 }
 
@@ -2409,7 +2438,7 @@ span.small-text {
 }
 
 .swiper-button-prev {
-  left: -106px;
+  left: -11px;
 }
 
 .floor-plan-slider-wp .swiper-scrollbar-horizontal {
@@ -2427,7 +2456,20 @@ span.small-text {
   background: var(--primary-color);
   border-radius: 50%;
   top: -8px;
-  left: 0;
+  left: 88px;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+    background-image: none;
+}
+
+.swiper-container-horizontal>.swiper-scrollbar {
+    bottom: 98px;
+    height: 1px;
+    background: var(--primary-color);
+    left: 0;
+    opacity: 1 !important;
+    width: 100%;
 }
 
 /*==========Floor Plan CSS End==========*/
@@ -2437,12 +2479,11 @@ span.small-text {
 
 .main-review {
     position: relative;
-    padding: 0px 0 420px 0;
 }
 
 .review-content {
   background: var(--secondary-color);
-  padding: 109px 140px 150px 114px;
+  padding: 109px 0 150px 114px;
   position: relative;
   z-index: 2;
 }
@@ -2465,10 +2506,22 @@ span.small-text {
 
 .review-slider {
   margin-top: 90px;
+  padding-right: 35px;
 }
 
 .review-slider-content {
-  padding: 0 0 0 60px;
+  padding: 0 125px 0 60px;
+}
+
+.review-content:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 35px;
+    height: 101%;
+    background: var(--white-color);
 }
 
 .review-by {
@@ -2511,12 +2564,13 @@ span.small-text {
 
 .review-slider .swiper-button-prev,
 .review-slider .swiper-button-next {
-  top: -230px;
-  left: 20px;
+  top: -150px;
+  left: 74px;
 }
 
 .review-slider .swiper-button-next {
-  left: 110px;
+  left: 74px;
+  top: -264px;
 }
 
 .review-slider .swiper-button-prev .icon-box, .review-slider .swiper-button-next .icon-box {
@@ -2528,8 +2582,8 @@ span.small-text {
 }
 
 .review-slider .icon-box:after {
-    border-left: 1px solid var(--white-color);
-    border-top: 1px solid var(--white-color);
+    border-left: 2px solid var(--white-color);
+    border-top: 2px solid var(--white-color);
 }
 
 /*==========Review CSS End==========*/
@@ -2573,6 +2627,10 @@ span.small-text {
   margin-bottom: 30px;
 }
 
+.our-partner-img-wp .back-img {
+    border-radius: 20px;
+}
+
 .our-partner-title {
   margin: auto;
   max-width: 390px;
@@ -2582,27 +2640,72 @@ span.small-text {
 /*==========Our Partner CSS End==========*/
 
 .main-gallery {
-    /* height: 1304px; */
     position: relative;
     background: var(--light-color);
-    padding: 100px 0 510px 0;
+    padding: 235px 0 384px 0;
+}
+
+.main-gallery:before {
+    content: "";
+    position: absolute;
+    top: -230px;
+    left: 0;
+    width: 972px;
+    height: 1944px;
+    background-image: url(assets/images/gallery-floorplan.png);
+    z-index: 1;
+    background-size: cover;
+    opacity: 0.3;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .gallery-img-wp {
     height: 311px;
 }
-.gallery-slider-wp {
-    height: 1304px;
-}
 .swiper.gallery-slider {
-    width: calc(100% + 26vw);
-    height: 100%;
+    width: calc(100% + 28vw);
+    /* height: 100%; */
+    overflow: hidden;
+}
+
+.main-gallery .sec-btn {
+    margin-top: 30px;
+}
+
+.swiper.gallery-slider {
+    padding-bottom: 150px;
+}
+
+.gallery-slider .swiper-button-prev {
+    left: -171px;
+}
+
+.gallery-slider .swiper-button-next {
+    left: -60px;
+}
+
+.gallery-slider .swiper-scrollbar-drag {
+    height: 17px !important;
+    width: 17px !important;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: -8px;
+    left: 128px;
+}
+
+.gallery-slider .swiper-scrollbar {
+    width: 163%;
+}
+
+.gallery-slider .swiper-button-prev, .gallery-slider .swiper-button-next {
+    top: 73px;
 }
 
 /*==========Footer CSS Start==========*/
 .footer-bottom-box {
   position: relative;
-  padding: 40px 0;
+  padding: 25px 0;
 }
 
 .footer-bottom-text {
@@ -2618,9 +2721,11 @@ span.small-text {
 
 .copy-right p,
 .footer-other-link p {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 20px;
   margin-bottom: 0;
+  color: var(--dark-color);
 }
 
 .footer-bottom-link {
@@ -2636,12 +2741,12 @@ span.small-text {
 }
 
 .footer-bottom-link ul li {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 12px;
   display: inline-block;
-  padding-right: 8px;
-  margin-right: 8px;
-  border-right: 1px solid var(--common-color);
+  padding-right: 6px;
+  margin-right: 6px;
+  border-right: 1px solid var(--dark-color);
 }
 
 .footer-bottom-link ul li:last-child {
@@ -2651,9 +2756,10 @@ span.small-text {
 }
 
 .footer-bottom-link ul li a {
-  font-size: 14px;
-  line-height: 24px;
-  color: var(--common-color);
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 300;
+  color: var(--dark-color);
   transition: 0.3s;
 }
 
@@ -2662,10 +2768,19 @@ span.small-text {
 }
 
 .footer-other-link p a {
-  color: var(--primary-color);
+  font-size: 12px;
+  color: var(--secondary-color);
   font-weight: bold;
+  text-decoration: none !important;
   transition: 0.3s;
 }
+
+.footer-bottom-link ul li:first-child {
+    border-left: 1px solid var(--dark-color);
+    padding-left: 6px;
+    margin-left: 6px;
+}
+
 
 .footer-other-link p a:hover {
   color: var(--dark-color);
@@ -2677,7 +2792,7 @@ span.small-text {
 
 .top-footer {
     position: relative;
-    padding: 93px 0 93px 0;
+    padding: 93px 0 92px 0;
     background: var(--light-color);
 }
 
@@ -2693,13 +2808,25 @@ span.small-text {
     padding-left: 200px;
 }
 
+.footer-contact-info ul li {
+    margin-bottom: 30px;
+}
+
+.top-footer .site-branding {
+    width: 200px;
+}
+.footer-contact-info ul li:nth-child(2), .footer-contact-info ul li:nth-child(4) {
+    margin-bottom: 0;
+}
+
 
 .footer-contact-info ul li a span.icon {
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .footer-contact-info ul li a {
     color: var(--dark-color);
+    font-weight: 300;
 }
 
 /*==========Footer CSS End==========*/
@@ -2734,8 +2861,9 @@ span.small-text {
 
 /*========== Inner Page CSS end ==========*/
 .main-banner.inner-banner {
-  padding: 280px 0 160px 0;
+  padding: 280px 0 0 0;
   position: relative;
+  background: var(--secondary-color);
 }
 
 .main-banner.inner-banner .banner-content {
@@ -2799,6 +2927,169 @@ span.small-text {
   list-style: disc;
 }
 /*========== Inner page CSS end ==========*/
+
+.main-banner.inner-banner:before {
+    content: none;
+}
+
+.floor-plan-service-content {
+    max-width: 623px;
+}
+
+.floor-plan-service-img-wp {
+    height: 643px;
+}
+
+.floor-plan-service-img-wp .back-img {
+    width: calc(100% + 2%);
+}
+
+.main-banner.inner-banner .h1-title {
+    font-size: 75px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.floor-plan-service-content .h1-title {
+    max-width: 420px;
+}
+
+
+
+
+.floor-plan-list {
+    position: relative;
+    padding: 150px 0 150px  0;
+}
+
+.floor-plan-list-content .sec-title {
+    margin-bottom: 30px;
+}
+
+.floor-plan-list-card {
+    border: 1px solid rgb(112 112 112 / 30%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px 20px 20px;
+    margin-bottom: 10px;
+}
+
+.floor-plan-list-card .img-wp .back-img {
+    border-radius: 8px;
+}
+
+.floor-plan-list-heading {
+    margin-bottom: 30px;
+    padding-left: 390px;
+}
+
+.floor-plan-list-heading span:last-child {
+    margin-left: 150px;
+}
+
+.floor-plan-list-heading span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.floor-plan-list-card .img-wp {
+    height: 150px;
+    flex: 0 0 24%;
+    max-width: 24%;
+}
+
+
+.floor-plan-list-card .title-wp {flex: 0 0 15%;max-width: 15%;}
+
+.floor-plan-list-card .btn-wp {
+    flex: 0 0 16%;
+    max-width: 16%;
+}
+
+.floor-plan-list-card .description-wp {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+
+.floor-plan-list-card .sec-btn {
+    width: 170px;
+    height: 47px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.floor-plan-list-card:last-child {
+    margin-bottom: 0;
+}
+
+.floor-plan-list-card .description-wp p {
+    margin-bottom: 0;
+}
+
+.floor-plan-list-card .sec-btn:hover {
+    color: var(--white-color);
+}
+
+/* plan propertiies page start */
+
+
+.plan-properties-img-wp {
+    height: 600px;
+}
+
+.plan-thumbnail-img-wp {
+    height: 65px;
+    /* width: 120px; */
+}
+
+.plan-properties-slider-wp {
+    width: calc(100% + 21vw);
+    margin-bottom: -250px;
+    overflow: hidden;
+}
+
+.plan-properties-slider-wp .swiper-thumbnails {
+    margin-top: 13px;
+    margin-left: -50px;
+    padding-bottom: 120px;
+}
+
+section.plan-feature {
+    position: relative;
+    padding: 300px 0 100px 0;
+}
+
+
+.plan-properties-slider-wp .swiper-thumbnails .swiper-button-prev {
+    left: -20px;
+}
+
+.plan-properties-slider-wp .swiper-thumbnails .swiper-button-next {
+    left: 90px;
+}
+
+.plan-properties-slider-wp .swiper-slide-thumb-active {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.plan-feature-list {background: var(--light-color);padding: 70px 100px 70px 100px;}
+
+.plan-feature-list ul li {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.plan-feature-list ul li span {
+    font-weight: 400;
+}
+/* plan propertiies page end */
+
+
 
 /*========== Thank You Page CSS Start ==========*/
 .thank-text {

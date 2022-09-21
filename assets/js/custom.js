@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
     /* floor-plans slider */
     new Swiper('.floor-plans-slider', {
         slidesPerView: 3,
-        spaceBetween: 3,
+        spaceBetween: 20,
         loop: true,
         scrollbar: {
             el: ".swiper-scrollbar",
@@ -76,36 +76,45 @@ jQuery(document).ready(function ($) {
         },
     });
 
-    /* gallery slider */
+
+    //Gallery Slider
     new Swiper('.gallery-slider', {
         slidesPerView: 4,
-        spaceBetween: 30,
-        grid: {
-            rows: 2,
+        slidesPerColumn: 2,
+        spaceBetween: 20,
+        autoplay: {
+            delay: 5000,
         },
         loop: true,
+        slidesPerColumnFill: 'column',
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: true,
+            draggable: true,
+        },
         pagination: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        breakpoints: {
-            1200: {
-                slidesPerView: 4,
+            breakpoints: {
+                1200: {
+                    slidesPerView: 4,
+                },
+                991: {
+                    slidesPerView: 2,
+                },
+                0: {
+                    slidesPerView: 1.5,
+                },
             },
-            991: {
-                slidesPerView: 2,
-            },
-            0: {
-                slidesPerView: 1.5,
-            },
-        },
     });
+
 
     /* review slider */
     new Swiper('.review-slider', {
         slidesPerView: 1,
-        spaceBetween: 1,
+        spaceBetween: 35,
         loop: true,
         scrollbar: {
             el: ".swiper-scrollbar",
@@ -129,134 +138,35 @@ jQuery(document).ready(function ($) {
         },
     });
 
-
-    //Gallery Slider
-    new Swiper('.gallery-slider', {
-        slidesPerView: 3,
-        slidesPerColumn: 2,
-        spaceBetween: 3,
-        loop: true,
-        scrollbar: {
-            el: ".swiper-scrollbar",
-            hide: false,
-        },
-        pagination: false,
+    var swiperThumbnails = new Swiper('.swiper-thumbnails', {
+        spaceBetween: 10,
+        slidesPerView: 10,
+        resistanceRatio: 0.6,
+        slidesOffsetBefore: 50,
+        slidesOffsetAfter: 50,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        breakpoints: {
-            1200: {
-                slidesPerView: 3,
-            },
-            991: {
-                slidesPerView: 2,
-            },
-            0: {
-                slidesPerView: 1.5,
-            },
-        },
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        }
     });
-
-
-
-    //Floor Plans Slider
-    // jQuery('.floor-plans-slider').slick({
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1,
-    //     infinite: true,
-    //     rows: 0,
-    //     swipeToSlide: true,
-    //     dots: false,
-    //     arrows: true,
-    //     autoplay: false,
-    //     autoplaySpeed: 2000,
-    //     prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-    //     nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
-    //     responsive: [{
-    //             breakpoint: 992,
-    //             settings: {
-    //                 slidesToShow: 2,
-    //                 slidesToScroll: 2,
-    //                 infinite: true,
-    //                 dots: true,
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 768,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1,
-    //                 infinite: true,
-    //                 dots: true,
-    //             }
-    //         }
-    //     ]
-    // });
-
-    //Review Slider
-    // jQuery('.review-slider').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     infinite: true,
-    //     dots: false,
-    //     rows: 0,
-    //     swipeToSlide: true,
-    //     arrows: true,
-    //     autoplay: false,
-    //     autoplaySpeed: 2000,
-    //     prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-    //     nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
-    //     responsive: [{
-    //         breakpoint: 992,
-    //         settings: {
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1,
-    //             infinite: true,
-    //             dots: false,
-    //             autoplay: true,
-    //             autoplaySpeed: 2000,
-    //         }
-    //     }]
-    // });
-
-    //Gallery slider
-    // jQuery('.gallery-slider').slick({
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1,
-    //     infinite: true,
-    //     dots: false,
-    //     rows: 2,
-    //     swipeToSlide: true,        
-    //     arrows: true,
-    //     autoplay: true,
-    //     autoplaySpeed: 2000,
-    //     prevArrow: '<button class="slide-arrow prev-arrow"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-    //     nextArrow: '<button class="slide-arrow next-arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
-    //     responsive: [{
-    //             breakpoint: 992,
-    //             settings: {
-    //                 slidesToShow: 2,
-    //                 slidesToScroll: 1,
-    //                 infinite: true,
-    //                 dots: true,
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 768,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1,
-    //                 infinite: true,
-    //                 dots: true,
-    //                 autoplay: true,
-    //                 autoplaySpeed: 2000,
-    //             }
-    //         }
-    //     ]
-    // });
-
-
+    
+    var swiperGallery = new Swiper('.swiper-gallery', {
+        spaceBetween: 10,
+        simulateTouch: true,
+        preloadImages: false,
+        loop: true,
+        lazy: true,
+        lazy: {
+            loadPrevNext: false,
+            loadOnTransitionStart: true
+        },
+        speed: 300,
+        thumbs: {
+            swiper: swiperThumbnails
+        },
+        
+    });
+    
 
 
 

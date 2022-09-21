@@ -1,17 +1,20 @@
 <!-- banner start -->
+<?php
+global $phone,$phone_link;
+?>
 <section class="main-banner back-img" style="background-image: url('<?php the_field('home_banner_image'); ?>');">
     <div class="sec-wp">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-content white-text text-center">
-                        <h1 class="h1-title"><?php the_field('home_banner_title'); ?></h1>
                         <?php
-                        $phone = get_field('phone_number','option');
-                        $val = array("(", ")", " ", "-", ".");
-                        $replace = array("", "", "", "", "");
-                        //Phone link
-                        $phone_link = str_replace($val, $replace, $phone);
+                        $home_banner_title = get_field('home_banner_title');
+                        if(isset($home_banner_title) && (!empty($home_banner_title))):
+                        ?>
+                            <h1 class="h1-title"><?php echo $home_banner_title; ?></h1>
+                        <?php
+                        endif;
                         ?>
                         <div class="banner-btn">
                             <a href="tel:<?php echo $phone_link; ?>" title="Call now <?php echo $phone; ?>" class="sec-btn">Call now</a>
@@ -37,11 +40,32 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-us-content white-text">
-                        <span class="small-text"><?php the_field('home_about_us_title'); ?></span>
-                        <h2 class="h2-title"><?php the_field('home_about_us_sub_title'); ?></h2>
-                        <div class="about-us-text overflow-text" data-simplebar="init">
-                            <?php the_field('home_about_us_content'); ?>
-                        </div>
+                        <?php
+                        $home_about_us_title = get_field('home_about_us_title');
+                        $home_about_us_sub_title = get_field('home_about_us_sub_title');
+                        $home_about_us_content = get_field('home_about_us_content');
+                        if(isset($home_about_us_title) && (!empty($home_about_us_title))):
+                        ?>
+                            <span class="small-text"><?php echo $home_about_us_title; ?></span>
+                        <?php
+                        endif;
+                        ?>
+                        <?php
+                        if(isset($home_about_us_sub_title ) && (!empty($home_about_us_sub_title ))):
+                        ?>
+                            <h2 class="h2-title"><?php echo $home_about_us_sub_title; ?></h2>
+                        <?php
+                        endif;
+                        ?>
+                        <?php
+                        if(isset($home_about_us_content) && (!empty($home_about_us_content))):
+                        ?>
+                            <div class="about-us-text overflow-text" data-simplebar="init">
+                                <?php echo $home_about_us_content; ?>
+                            </div>
+                        <?php
+                        endif;
+                        ?>
                     </div>
                 </div>
             </div>
@@ -90,7 +114,7 @@
                                                     <h3 class="h3-title"><?php the_title(); ?></h3>
                                                     <span class="sub-title"><?php the_field('properties_details',$loop->ID()); ?></span>
                                                     <div class="floor-plan-text overflow-text" data-simplebar="init">
-                                                        <?php the_field('properties_details_content'.$loop->ID()); ?>
+                                                        <?php the_field('properties_details_content',$loop->ID()); ?>
                                                     </div>
                                                 </div>
                                                 <div class="read-more-wp">

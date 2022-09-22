@@ -1,5 +1,5 @@
 <!-- banner start -->
-<section class="main-banner inner-banner">
+<section class="main-banner inner-banner main-floor-plan">
     <div class="sec-wp">
         <div class="container">
             <div class="row align-items-center">
@@ -56,7 +56,7 @@
                                         <div class="back-img" style="background-image: url('<?php the_post_thumbnail_url();  ?>');"></div>
                                     </div>
                                     <div class="title-wp">
-                                        <h4 class="h4-title"><?php the_title(); ?></h4>
+                                        <h5 class="h5-title"><?php the_title(); ?></h5>
                                     </div>
                                     <div class="description-wp">
                                         <p><?php the_field('properties_details',$loop->ID()); ?></p>

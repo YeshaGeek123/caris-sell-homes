@@ -620,12 +620,13 @@ textarea {
   display: inline-block;
   position: relative;
   height: 100%;
+  margin-right: 80px;
 }
 
-.main-navigation ul li.current-menu-item a, .main-navigation ul li a:hover {
-    color: var(--primary-color);
+.main-navigation ul li.current-menu-item a,
+.main-navigation ul li a:hover {
+  color: var(--primary-color);
 }
-
 
 .main-navigation a {
   height: 100%;
@@ -634,7 +635,6 @@ textarea {
   color: var(--white-color);
   font-size: 16px;
   text-transform: uppercase;
-  margin-right: 80px;
   transition: 0.3s;
   position: relative;
 }
@@ -888,6 +888,7 @@ object {
 /*========== Fonts CSS End ==========*/
 
 /*========== Form CSS Start ==========*/
+
 select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -921,7 +922,7 @@ span.wpcf7-not-valid-tip {
 
 .wpcf7-form-control-wrap {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -958,31 +959,31 @@ input[type="number"] {
 
 .form-input::-webkit-input-placeholder,
 .input-text::-webkit-input-placeholder {
-  color: var(--input-color);
+  color: var(--white-color);
   opacity: 1;
 }
 
 .form-input::-moz-placeholder,
 .input-text::-moz-placeholder {
-  color: var(--input-color);
+  color: var(--white-color);
   opacity: 1;
 }
 
 .form-input:-ms-input-placeholder,
 .input-text:-ms-input-placeholder {
-  color: var(--input-color);
+  color: var(--white-color);
   opacity: 1;
 }
 
 .form-input::-ms-input-placeholder,
 .input-text::-ms-input-placeholder {
-  color: var(--input-color);
+  color: var(--white-color);
   opacity: 1;
 }
 
 .form-input::placeholder,
 .input-text::placeholder {
-  color: var(--input-color);
+  color: var(--white-color);
   opacity: 1;
 }
 
@@ -1005,16 +1006,16 @@ select::-ms-expand {
   .select2-selection__rendered,
 select {
   width: 100%;
-  height: 46px;
+  height: 66px;
   border: none;
   outline: none !important;
-  padding: 0 15px;
+  padding: 0 15px 0 70px;
   font-size: 16px;
-  line-height: 26px;
-  color: var(--dark-color);
-  background: var(--white-color);
+  line-height: 30px;
+  font-weight: bold;
+  color: var(--white-color);
+  background: rgb(255 255 255 / 10%);
   -webkit-appearance: none;
-  border-radius: 10px;
 }
 
 select,
@@ -1026,9 +1027,9 @@ select.form-input {
 }
 
 .form-input.wpcf7-textarea {
-  height: 120px;
+  height: 170px;
   resize: none;
-  padding: 15px;
+  padding: 15px 0 0 70px;
   display: block;
 }
 
@@ -1386,6 +1387,14 @@ a:hover {
 }
 
 .h3-title {
+  font-size: 25px;
+  line-height: 40px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0;
+}
+
+.h4-title {
   font-size: 20px;
   line-height: 30px;
   font-weight: bold;
@@ -1393,14 +1402,13 @@ a:hover {
   margin-bottom: 0;
 }
 
-.h4-title {
+.h5-title {
   font-size: 16px;
   line-height: 20px;
   font-weight: bold;
   color: var(--dark-color);
   margin-bottom: 0;
 }
-
 
 .grecaptcha-badge {
   display: none !important;
@@ -1583,7 +1591,7 @@ a:hover {
 .woocommerce input.button {
   width: 370px;
   height: 103px;
-  background: #cc8b65;
+  background: var(--primary-color);
   border: 1px solid transparent;
   display: inline-flex;
   justify-content: center;
@@ -1601,6 +1609,32 @@ a:hover {
   overflow: hidden;
   position: relative;
   z-index: 2;
+}
+
+.floor-plan-btn {
+  width: 370px;
+  height: 87px;
+  background: #cc8b65;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -webkit-appearance: none;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--white-color);
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none !important;
+  transition: 0.3s;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  padding: 0 0 0 33px;
+}
+
+.main-banner.inner-banner.main-plan-properties {
+  padding: 280px 0 0px 0;
 }
 
 .btn-transparent {
@@ -1632,9 +1666,11 @@ a:hover {
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
 .woocommerce input.button:hover {
-  background: var(--primary-color);
+  background: #e29568;
   border-color: var(--primary-color);
   color: var(--white-color);
+  letter-spacing: 3px;
+  font-weight: 500;
 }
 
 .main-banner .banner-video,
@@ -2032,7 +2068,7 @@ button.close:hover {
   z-index: 99;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .header-menu {
@@ -2124,6 +2160,19 @@ button.close:hover {
   height: 769px;
 }
 
+.about-us-text:before {
+  content: "";
+  position: absolute;
+  height: 172px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: linear-gradient(0deg, rgb(18 50 41 / 100%), rgb(18 50 41 / 0));
+  opacity: 1;
+  pointer-events: none;
+}
+
 .main-about-us {
   position: relative;
   padding: 164px 0 144px 0;
@@ -2131,21 +2180,23 @@ button.close:hover {
 }
 
 .about-us-text {
+  position: relative;
   height: 443px;
   margin-top: 30px;
   padding-right: 70px;
 }
 
 .about-us-text .simplebar-scrollbar {
-    height: 17px !important;
-    width: 17px !important;
-    left: -9px;
+  height: 17px !important;
+  width: 17px !important;
+  left: -9px;
+  border-radius: 50%;
 }
 
 .about-us-text .simplebar-track.vertical {
-    margin-right: 10px;
-    width: 1px;
-    background: var(--primary-color);
+  margin-right: 10px;
+  width: 1px;
+  background: var(--primary-color);
 }
 .about-us-content {
   margin-left: 70px;
@@ -2195,7 +2246,8 @@ span.small-text {
   background: var(--light-color);
 }
 
-.featured-home-btn .sec-btn, .main-gallery .sec-btn {
+.featured-home-btn .sec-btn,
+.main-gallery .sec-btn {
   width: 228px;
   height: 75px;
 }
@@ -2244,11 +2296,11 @@ span.small-text {
   height: auto;
   overflow: hidden;
   transition: 0.4s;
-  transform: translate(0, 128%);
+  transform: translate(0, 130%);
   z-index: 1;
 }
 
-.floor-plan-slider-content .h3-title {
+.floor-plan-slider-content .h4-title {
   margin-bottom: 0;
 }
 
@@ -2323,11 +2375,11 @@ span.small-text {
   padding-bottom: 120px;
 }
 
-.swiper-horizontal>.swiper-scrollbar {
-    bottom: 98px;
-    background: var(--primary-color);
-    opacity: 1 !important;
-    height: 1px;
+.swiper-horizontal > .swiper-scrollbar {
+  bottom: 98px;
+  background: var(--primary-color);
+  opacity: 1 !important;
+  height: 1px;
 }
 
 .swiper-dots.for-des {
@@ -2464,26 +2516,31 @@ span.small-text {
   left: 88px;
 }
 
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-    background-image: none;
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  background-image: none;
 }
 
-.swiper-container-horizontal>.swiper-scrollbar {
-    bottom: 98px;
-    height: 1px;
-    background: var(--primary-color);
-    left: 0;
-    opacity: 1 !important;
-    width: 100%;
+.swiper-container-horizontal > .swiper-scrollbar {
+  bottom: 98px;
+  height: 1px;
+  background: var(--primary-color);
+  left: 0;
+  opacity: 1 !important;
+  width: 100%;
 }
 
 /*==========Floor Plan CSS End==========*/
 
 /*==========Review CSS Start==========*/
 
-
 .main-review {
-    position: relative;
+  position: relative;
+  background: var(--light-color);
+}
+
+.page-id-10 .main-review {
+  background: var(--white-color);
 }
 
 .review-content {
@@ -2494,15 +2551,15 @@ span.small-text {
 }
 
 .review-content:before {
-    content: "";
-    position: absolute;
-    top: 240px;
-    left: 114px;
-    width: 112px;
-    height: 378px;
-    background: var(--white-color);
-    opacity: 0.05;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 240px;
+  left: 114px;
+  width: 112px;
+  height: 378px;
+  background: var(--white-color);
+  opacity: 0.05;
+  z-index: 0;
 }
 
 .review-content .h2-title {
@@ -2510,7 +2567,7 @@ span.small-text {
 }
 
 .review-slider {
-  margin-top: 90px;
+  margin-top: 70px;
   padding-right: 35px;
 }
 
@@ -2519,20 +2576,23 @@ span.small-text {
 }
 
 .review-content:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    width: 35px;
-    height: 101%;
-    background: var(--white-color);
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 35px;
+  height: 101%;
+  background: var(--white-color);
 }
 
 .review-by {
-  margin-top: 15px;
+  margin: 15px 0 0 0;
 }
 
+.review-by p {
+  margin-bottom: 0;
+}
 .review-slider .slick-arrow {
   top: 0;
   right: -160px;
@@ -2578,17 +2638,18 @@ span.small-text {
   top: -264px;
 }
 
-.review-slider .swiper-button-prev .icon-box, .review-slider .swiper-button-next .icon-box {
-    background: var(--primary-color);
+.review-slider .swiper-button-prev .icon-box,
+.review-slider .swiper-button-next .icon-box {
+  background: var(--primary-color);
 }
 
 .review-slider .icon-box:before {
-    background: var(--white-color);
+  background: var(--white-color);
 }
 
 .review-slider .icon-box:after {
-    border-left: 2px solid var(--white-color);
-    border-top: 2px solid var(--white-color);
+  border-left: 2px solid var(--white-color);
+  border-top: 2px solid var(--white-color);
 }
 
 /*==========Review CSS End==========*/
@@ -2602,25 +2663,23 @@ span.small-text {
   position: relative;
 }
 
-
 .main-our-partner .bg-img.back-img {
-    position: absolute;
-    height: 810px;
-    top: 0;
-    left: 0;
+  position: absolute;
+  height: 810px;
+  top: 0;
+  left: 0;
 }
 
 .our-partner-wp:before {
-    content: "";
-    position: absolute;
-    top: -6px;
-    transform: translateX(-50%);
-    left: 50%;
-    width: 570px;
-    height: 12px;
-    background: var(--primary-color);
+  content: "";
+  position: absolute;
+  top: -6px;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 570px;
+  height: 12px;
+  background: var(--primary-color);
 }
-
 
 .main-our-partner {
   position: relative;
@@ -2633,7 +2692,7 @@ span.small-text {
 }
 
 .our-partner-img-wp .back-img {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .our-partner-title {
@@ -2644,68 +2703,81 @@ span.small-text {
 
 /*==========Our Partner CSS End==========*/
 
+/*==========Gallery CSS Start==========*/
+
 .main-gallery {
-    position: relative;
-    background: var(--light-color);
-    padding: 235px 0 384px 0;
+  position: relative;
+  background: var(--white-color);
+  padding: 235px 0 384px 0;
+}
+
+.page-id-10 .main-gallery {
+  background: var(--light-color);
 }
 
 .main-gallery:before {
-    content: "";
-    position: absolute;
-    top: -230px;
-    left: 0;
-    width: 972px;
-    height: 1944px;
-    background-image: url(assets/images/gallery-floorplan.png);
-    z-index: 1;
-    background-size: cover;
-    opacity: 0.3;
-    background-position: center;
-    background-repeat: no-repeat;
+  content: "";
+  position: absolute;
+  top: -230px;
+  left: 0;
+  width: 972px;
+  height: 1944px;
+  background-image: url(assets/images/gallery-floorplan.png);
+  z-index: 1;
+  background-size: cover;
+  opacity: 0.3;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .gallery-img-wp {
-    height: 311px;
+  height: 311px;
 }
 .swiper.gallery-slider {
-    width: calc(100% + 28vw);
-    /* height: 100%; */
-    overflow: hidden;
+  width: calc(100% + 28vw);
+  /* height: 100%; */
+  overflow: hidden;
 }
 
 .main-gallery .sec-btn {
-    margin-top: 30px;
+  margin-top: 30px;
+}
+
+.gallery-content {
+  max-width: 384px;
 }
 
 .swiper.gallery-slider {
-    padding-bottom: 150px;
+  padding-bottom: 150px;
 }
 
 .gallery-slider .swiper-button-prev {
-    left: -171px;
+  left: -171px;
 }
 
 .gallery-slider .swiper-button-next {
-    left: -60px;
+  left: -60px;
 }
 
 .gallery-slider .swiper-scrollbar-drag {
-    height: 17px !important;
-    width: 17px !important;
-    background: var(--primary-color);
-    border-radius: 50%;
-    top: -8px;
-    left: 128px;
+  height: 17px !important;
+  width: 17px !important;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: -8px;
+  left: 128px;
 }
 
 .gallery-slider .swiper-scrollbar {
-    width: 163%;
+  width: 163%;
 }
 
-.gallery-slider .swiper-button-prev, .gallery-slider .swiper-button-next {
-    top: 73px;
+.gallery-slider .swiper-button-prev,
+.gallery-slider .swiper-button-next {
+  top: 73px;
 }
+
+/*==========Gallery CSS End==========*/
 
 /*==========Footer CSS Start==========*/
 .footer-bottom-box {
@@ -2781,11 +2853,10 @@ span.small-text {
 }
 
 .footer-bottom-link ul li:first-child {
-    border-left: 1px solid var(--dark-color);
-    padding-left: 6px;
-    margin-left: 6px;
+  border-left: 1px solid var(--dark-color);
+  padding-left: 6px;
+  margin-left: 6px;
 }
-
 
 .footer-other-link p a:hover {
   color: var(--dark-color);
@@ -2796,42 +2867,42 @@ span.small-text {
 }
 
 .top-footer {
-    position: relative;
-    padding: 93px 0 92px 0;
-    background: var(--light-color);
+  position: relative;
+  padding: 93px 0 92px 0;
+  background: var(--light-color);
 }
 
 .top-footer .site-branding a img {
-    filter: brightness(1) invert(1);
+  filter: brightness(1) invert(1);
 }
 
 .footer-contact-info ul {
-    column-count: 2;
+  column-count: 2;
 }
 
 .footer-contact-info {
-    padding-left: 200px;
+  padding-left: 200px;
 }
 
 .footer-contact-info ul li {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .top-footer .site-branding {
-    width: 200px;
+  width: 200px;
 }
-.footer-contact-info ul li:nth-child(2), .footer-contact-info ul li:nth-child(4) {
-    margin-bottom: 0;
+.footer-contact-info ul li:nth-child(2),
+.footer-contact-info ul li:nth-child(4) {
+  margin-bottom: 0;
 }
-
 
 .footer-contact-info ul li a span.icon {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .footer-contact-info ul li a {
-    color: var(--dark-color);
-    font-weight: 300;
+  color: var(--dark-color);
+  font-weight: 300;
 }
 
 /*==========Footer CSS End==========*/
@@ -2865,14 +2936,15 @@ span.small-text {
 /*==========Scroll To Top CSS End==========*/
 
 /*========== Inner Page CSS end ==========*/
+
 .main-banner.inner-banner {
-  padding: 280px 0 0 0;
+  padding: 300px 0 100px 0;
   position: relative;
   background: var(--secondary-color);
 }
 
 .main-banner.inner-banner .banner-content {
-  text-align: center;
+  text-align: left;
 }
 
 .main-banner.inner-banner .h1-title {
@@ -2933,168 +3005,374 @@ span.small-text {
 }
 /*========== Inner page CSS end ==========*/
 
+/*========== Floor Plan CSS start ==========*/
+
 .main-banner.inner-banner:before {
-    content: none;
+  content: none;
 }
 
 .floor-plan-service-content {
-    max-width: 623px;
+  max-width: 623px;
+}
+
+.main-banner.inner-banner.main-floor-plan {
+  padding: 320px 0 115px 0;
 }
 
 .floor-plan-service-img-wp {
-    height: 643px;
+  height: 643px;
 }
 
 .floor-plan-service-img-wp .back-img {
-    width: calc(100% + 2%);
+  width: calc(100% + 2%);
 }
 
 .main-banner.inner-banner .h1-title {
-    font-size: 75px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+  font-size: 75px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--white-color);
 }
 
 .floor-plan-service-content .h1-title {
-    max-width: 420px;
+  max-width: 420px;
 }
 
-
-
-
 .floor-plan-list {
-    position: relative;
-    padding: 150px 0 150px  0;
+  position: relative;
+  padding: 150px 0 150px 0;
 }
 
 .floor-plan-list-content .sec-title {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .floor-plan-list-card {
-    border: 1px solid rgb(112 112 112 / 30%);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 100px 20px 20px;
-    margin-bottom: 10px;
+  border: 1px solid rgb(112 112 112 / 30%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 100px 20px 20px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.floor-plan-list-card:hover .img-wp .back-img {
+  transform: scale(1.2);
+}
+
+.floor-plan-list-card:hover .btn-wp .sec-btn {
+  color: var(--white-color);
+}
+
+.floor-plan-list-card:hover .btn-wp .sec-btn:before {
+  width: 100%;
+}
+
+.floor-plan-list-card:hover .btn-wp .sec-btn,
+.floor-plan-list-card:hover .title-wp .h5-title {
+  letter-spacing: 4px;
+}
+
+.floor-plan-list-card .h5-title {
+  transition: 0.3s;
+}
+
+.floor-plan-list-card:hover {
+  background: var(--light-color);
 }
 
 .floor-plan-list-card .img-wp .back-img {
-    border-radius: 8px;
+  transition: 0.3s;
 }
 
 .floor-plan-list-heading {
-    margin-bottom: 30px;
-    padding-left: 390px;
+  margin-bottom: 30px;
+  padding-left: 390px;
 }
 
 .floor-plan-list-heading span:last-child {
-    margin-left: 150px;
+  margin-left: 150px;
 }
 
 .floor-plan-list-heading span {
-    font-size: 15px;
-    font-weight: 500;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .floor-plan-list-card .img-wp {
-    height: 150px;
-    flex: 0 0 24%;
-    max-width: 24%;
+  height: 150px;
+  flex: 0 0 24%;
+  max-width: 24%;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-
-.floor-plan-list-card .title-wp {flex: 0 0 15%;max-width: 15%;}
+.floor-plan-list-card .title-wp {
+  flex: 0 0 15%;
+  max-width: 15%;
+}
 
 .floor-plan-list-card .btn-wp {
-    flex: 0 0 16%;
-    max-width: 16%;
+  flex: 0 0 16%;
+  max-width: 16%;
 }
 
 .floor-plan-list-card .description-wp {
-    flex: 0 0 20%;
-    max-width: 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
 }
 
-
 .floor-plan-list-card .sec-btn {
-    width: 170px;
-    height: 47px;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+  width: 170px;
+  height: 47px;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .floor-plan-list-card:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .floor-plan-list-card .description-wp p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .floor-plan-list-card .sec-btn:hover {
-    color: var(--white-color);
+  color: var(--primary-color);
 }
 
-/* plan propertiies page start */
+/*========== Floor Plan Page CSS end ==========*/
 
+/*========== Plan Propertiies Page CSS Start ==========*/
 
 .plan-properties-img-wp {
-    height: 600px;
+  height: 600px;
+}
+
+.plan-properties-slider-wp:before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 390px;
+  width: 305px;
+  height: 12px;
+  background: var(--primary-color);
+  z-index: 2;
 }
 
 .plan-thumbnail-img-wp {
-    height: 65px;
-    /* width: 120px; */
+  height: 65px;
 }
 
 .plan-properties-slider-wp {
-    width: calc(100% + 21vw);
-    margin-bottom: -250px;
-    overflow: hidden;
+  width: calc(100% + 21vw);
+  margin-bottom: -250px;
+  overflow: hidden;
+}
+
+.plan-properties-slider-wp .swiper-container-horizontal > .swiper-scrollbar {
+  bottom: -164px;
+  left: 14px;
+  width: calc(100% + 19vw);
 }
 
 .plan-properties-slider-wp .swiper-thumbnails {
-    margin-top: 13px;
-    margin-left: -50px;
-    padding-bottom: 120px;
+  margin-top: 13px;
+  margin-left: -50px;
+  padding-bottom: 120px;
 }
 
-section.plan-feature {
-    position: relative;
-    padding: 300px 0 100px 0;
+.plan-properties-slider-wp .swiper-scrollbar-drag {
+  height: 17px !important;
+  width: 17px !important;
+  background: var(--primary-color);
+  border-radius: 50%;
+  top: -8px;
+  left: 28px;
 }
 
-
-.plan-properties-slider-wp .swiper-thumbnails .swiper-button-prev {
-    left: -20px;
+.plan-feature {
+  position: relative;
+  padding: 300px 0 100px 0;
 }
 
-.plan-properties-slider-wp .swiper-thumbnails .swiper-button-next {
-    left: 90px;
+.floor-plan-btn-wp .sec-btn {
+  height: 87px;
+  background: var(--secondary-color);
+  justify-content: space-between;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-left: 35px;
+  text-align: start;
+  border: 0;
+}
+
+.floor-plan-btn-wp .icon-box {
+  position: relative;
+  height: 87px;
+  min-width: 87px;
+}
+
+.floor-plan-btn-wp .sec-btn:before {
+  left: 0;
+  width: 560px;
+}
+
+.floor-plan-btn-wp .sec-btn:hover:before {
+  width: 0;
+}
+.plan-feature:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/images/plan-feature-floorplan.png);
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.floor-plan-btn .icon-box {
+  position: relative;
+  width: 87px;
+  height: 100%;
+  background: var(--secondary-color);
+}
+
+.floor-plan-btn-wp {
+  position: absolute;
+  bottom: -200px;
+  left: 10px;
+}
+
+.floor-plan-properties-content {
+  max-width: 383px;
+  min-height: 430px;
+}
+
+.floor-plan-btn-wp .icon-box:before {
+  background: var(--white-color);
+  height: 16px;
+  width: 2px;
+}
+
+.floor-plan-btn-wp .icon-box:after {
+  transform: rotate(224deg);
+  left: 38px;
+  border-color: var(--white-color);
+  top: 42px;
+}
+
+.plan-properties-slider-wp .swiper-button-prev {
+  left: -30px;
+  top: 133px;
+}
+
+.plan-properties-slider-wp .swiper-button-next {
+  left: 78px;
+  top: 133px;
 }
 
 .plan-properties-slider-wp .swiper-slide-thumb-active {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.plan-feature-list {background: var(--light-color);padding: 70px 100px 70px 100px;}
-
-.plan-feature-list ul li {
-    font-size: 15px;
-    line-height: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: var(--dark-color);
+.plan-list {
+  background: var(--light-color);
+  padding: 70px 100px 70px 100px;
+  min-height: 455px;
+  margin-bottom: 40px;
+}
+.plan-list.plan-feature-list ul li:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -22px;
+    width: 14px;
+    height: 14px;
+    background-image: url(assets/images/star-icon.svg);
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.plan-list .h3-title {
+  margin-bottom: 36px;
 }
 
-.plan-feature-list ul li span {
-    font-weight: 400;
+.plan-list.model-detail-list ul li span.icon {
+  min-width: 29px;
+  margin-right: 14px;
 }
-/* plan propertiies page end */
+.plan-list ul li span.icon {
+  display: inline-block;
+  margin-right: 10px;
+}
 
+.plan-list ul li {
+  position: relative;
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: var(--dark-color);
+}
 
+.plan-list ul li span {
+  font-weight: 400;
+}
+
+/*========== Plan Propertiies Page CSS End ==========*/
+
+/*========== Conatact us Page CSS Start ==========*/
+
+.contact-sec-info .footer-contact-info ul li a {
+  color: var(--white-color);
+}
+
+.contact-sec-info .footer-contact-info ul {
+  column-count: 1;
+}
+
+.contact-sec-info .footer-contact-info {
+  padding-left: 0;
+}
+
+.contact-sec-info .footer-contact-info ul li {
+  margin-bottom: 40px;
+}
+
+.contact-sec-info .footer-contact-info ul li:last-child {
+  margin-bottom: 0;
+}
+
+.main-banner.inner-banner.main-contact-us {
+  padding: 340px 0 200px 0;
+}
+
+.contact-us-content {
+  max-width: 429px;
+}
+
+.contact-sec-info {
+  margin-top: 100px;
+}
+
+.main-banner.inner-banner.main-contact-us:after {
+  background-image: url(assets/images/about-us-floorplan.png);
+  opacity: 1;
+}
+.conatct-us-wp .submit-btn .sec-btn {
+  width: 228px;
+  height: 75px;
+}
+
+/*========== Conatact us Page CSS End ==========*/
 
 /*========== Thank You Page CSS Start ==========*/
 .thank-text {

@@ -1,186 +1,91 @@
 <!-- banner start -->
-<section class="main-banner inner-banner">
+<?php
+global $phone, $phone_link;
+?>
+<section class="main-banner inner-banner main-plan-properties">
     <div class="sec-wp">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="floor-plan-properties-content white-text">
-                        <span class="small-text">Floor Plans</span>
-                        <h1 class="h1-title">La Belle</h1>
+                        <span class="small-text"><?php echo get_the_title(14); ?></span>
+                        <h1 class="h1-title"><?php the_title(); ?></h1>
                         <div class="floor-plan-properties-text">
-                            <p>The La Belle is designed by Palm Harbor Homes.
-                                It is one of the nation’s leading builders of manufactured homes and they take pride in their superior focus on construction quality.</p>
-                            <p>The La Belle is a 3,078-square-foot home with 4 bedrooms and 3 baths. </p>
+                            <?php the_field('properties_details_content'); ?>
                         </div>
+                    </div>
+                    <div class="floor-plan-btn-wp">
+                        <a class="sec-btn" href="javascript:void(0)" title="The Floor Plan">Download the Floor Plan <span class="icon-box"></span></a>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="plan-properties-slider-wp">
                         <!-- Swiper Gallery-->
-                        <div class="swiper-container swiper-gallery">
+                        <div class="swiper swiper-gallery">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
+                                        <div class="back-img" style="background-image: url('<?php the_post_thumbnail_url();  ?>')"></div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
+                                <?php
+                                $args = array(
+                                    'post_type' => 'properties',
+                                    'post_status' => 'publish',
+                                    'numberposts' => -1,
+                                    'order' => 'ASC',
+                                );
+                                $loop_post = new WP_Query($args);
+                                while ($loop_post->have_posts()) : $loop_post->the_post();
+                                ?>
+                                    <div class="swiper-slide">
+                                        <div class="plan-properties-img-wp">
+                                            <div class="back-img" style="background-image: url('<?php the_post_thumbnail_url();  ?>')">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-properties-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-container swiper-thumbnails">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/review-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="plan-thumbnail-img-wp">
-                                        <div class="back-img" style="background-image: url('<?php echo home_url() ?>/wp-content/uploads/2022/09/banner-img.jpg')">
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php
+                                endwhile;
+                                wp_reset_postdata();
+                                ?>
+
                             </div>
                             <div class="swiper-dots for-des">
                                 <div class="swiper-button-prev">
                                     <span class="icon-box">
-
                                     </span>
                                 </div>
                                 <div class="swiper-button-next">
                                     <span class="icon-box">
-
                                     </span>
                                 </div>
                             </div>
                             <div class="swiper-scrollbar"></div>
+                        </div>
+                        <div class="swiper swiper-thumbnails">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="plan-thumbnail-img-wp">
+                                        <div class="back-img" style="background-image: url('<?php the_post_thumbnail_url();  ?>')">
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php
+                                $post_thumbnail = new WP_Query($args);
+                                while ($post_thumbnail->have_posts()) : $post_thumbnail->the_post();
+                                ?>
+                                    <div class="swiper-slide">
+                                        <div class="plan-thumbnail-img-wp">
+                                            <div class="back-img" style="background-image: url('<?php the_post_thumbnail_url();  ?>')">
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                endwhile;
+                                wp_reset_postdata();
+                                ?>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,35 +100,87 @@
     <div class="sec-wp">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="plan-feature-list">
-                        <ul>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island</li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>Large kitchen island <span>(or home office option)</span></li>
-                        </ul>
+                <?php
+                $properties_list_features = get_field('properties_list_features');
+                if (isset($properties_list_features) && !empty($properties_list_features)) :
+                ?>
+                    <div class="col-lg-6">
+
+                        <div class="plan-list plan-feature-list">
+                            <h3 class="h3-title"><?php the_field('properties_feature_main_title'); ?></h3>
+                            <ul>
+                                <?php
+                                if (have_rows('properties_list_features')) :
+                                    while (have_rows('properties_list_features')) : the_row();
+                                ?>
+                                        <li><?php the_sub_field('properties_list_features_name'); ?></li>
+                                <?php
+                                    endwhile;
+                                endif;
+                                ?>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="model detail-list">
-                        <ul>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>
-                                Living Areas: <span class="detail">2</span></li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>
-                                Living Areas: <span class="detail">2</span></li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>
-                                Living Areas: <span class="detail">2</span></li>
-                            <li><span class="icon"><img src="<?php echo home_url() ?>/assets/images/livingareas-icon.svg" alt=""></span>
-                                Living Areas: <span class="detail">2</span></li>
-                        </ul>
+                <?php
+                endif;
+                ?>
+                <?php
+                $actual_size = get_field('actual_size');
+                if (isset($actual_size) && !empty($actual_size)) :
+                ?>
+                    <div class="col-lg-6">
+                        <div class="plan-list plan-feature-list">
+                            <h3 class="h3-title"><?php the_field('properties_actual_size_main_title'); ?></h3>
+                            <ul>
+                                <?php
+                                if (have_rows('properties_actual_size')) :
+                                    while (have_rows('properties_actual_size')) : the_row();
+                                ?>
+                                        <li><img src="<?php echo home_url() ?>/wp-content/themes/caris-sell-homes/assets/images/star-icon.svg" width="11" height="11" alt="star icon"><?php the_sub_field('properties_list_actual_size'); ?></li>
+                                <?php
+                                    endwhile;
+                                endif;
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php
+                endif;
+                ?>
+                <?php
+                $model_details_list = get_field('model_details_list');
+                if (isset($model_details_list) && !empty($model_details_list)) :
+                ?>
+                    <div class="col-lg-6">
+                        <div class="plan-list model-detail-list">
+                            <h3 class="h3-title"><?php the_field('properties_model_main_title'); ?></h3>
+                            <ul>
+                                <?php
+                                if (have_rows('model_details_list')) :
+                                    while (have_rows('model_details_list')) : the_row();
+                                ?>
+                                        <li><span class="icon"><img src="<?php the_sub_field('model_details_list_icon'); ?>" width="22" height="17" alt="Details List"></span>
+                                            <?php the_sub_field('model_details_list_title'); ?>: <span class="light-text"><?php the_sub_field('model_details_list_content'); ?></span></li>
+                                <?php
+                                    endwhile;
+                                endif;
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php
+                endif;
+                ?>
+                <div class="col-lg-12">
+                    <div class="plan-feature-btn">
+                        <a class="sec-btn" title="Call now <?php echo $phone; ?>" href="tel:<?php echo $phone_link; ?>">Call now</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<?php
+get_template_part('template-parts/content', 'common');
+?>

@@ -255,6 +255,8 @@ function custom_reviews_post() {
 }
 add_action( 'init', 'custom_reviews_post' );
 
+
+
 // Filter the output of logo to fix Googles Error about itemprop logo
 add_filter( 'get_custom_logo', 'change_html_custom_logo' );
 function change_html_custom_logo() {

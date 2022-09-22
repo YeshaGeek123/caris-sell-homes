@@ -3,51 +3,7 @@ jQuery(document).ready(function ($) {
     var window_size = jQuery(window).width();
     new WOW().init();
     var currentRequest = null;
-    jQuery(".gallery-tab li").on("click", function () {
-        var slug = jQuery(this).attr('data-id');
-        jQuery(".gallery-tab li").removeClass('active-gallery-tab');
-        jQuery(this).addClass('active-gallery-tab');
-        jQuery(".gallery-loader").css("display", "flex");
-
-        currentRequest = $.ajax({
-            type: 'POST',
-            url: custom_call.ajaxurl,
-            data: {
-                'action': 'gallery_tabbing',
-                'id': slug,
-            },
-            dataType: 'text',
-            success: function (data) {
-                console.log(data);
-                // jQuery(".main-slider").slick('unslick');
-                // jQuery(".gallery-box").html(data);
-                // jQuery(".gallery-loader").css("display", "none");
-                // gallery_slider();
-            }
-        });
-    });
-
-
-
-    /* FAQ Page accordion */
-    jQuery('.accordion .faq-content').hide();
-    jQuery('.accordion > div:eq(0) h3').addClass('active-faq');
-    jQuery('.accordion > div:eq(0) .faq-content').slideDown();
-
-    jQuery('.accordion h3').click(function (j) {
-        var dropDown = jQuery(this).closest('div').find('.faq-content');
-        jQuery(this).closest('.accordion').find('.faq-content').not(dropDown).slideUp();
-        if (jQuery(this).hasClass('active-faq')) {
-            jQuery(this).removeClass('active-faq');
-        } else {
-            jQuery(this).closest('.accordion').find('h3.active-faq').removeClass('active-faq');
-            jQuery(this).addClass('active-faq');
-        }
-        dropDown.stop(false, true).slideToggle();
-        j.preventDefault();
-    });
-
-
+ 
     /* floor-plans slider */
     new Swiper('.floor-plans-slider', {
         slidesPerView: 3,
@@ -141,19 +97,23 @@ jQuery(document).ready(function ($) {
     var swiperThumbnails = new Swiper('.swiper-thumbnails', {
         spaceBetween: 10,
         slidesPerView: 10,
-        resistanceRatio: 0.6,
-        slidesOffsetBefore: 50,
-        slidesOffsetAfter: 50,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        }
+        // resistanceRatio: 0.6,
+        //slidesOffsetBefore: 50,
+        //slidesOffsetAfter: 50, 
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,       
     });
     
     var swiperGallery = new Swiper('.swiper-gallery', {
         spaceBetween: 10,
         simulateTouch: true,
         preloadImages: false,
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: true,
+            draggable: true,
+        },
         loop: true,
         lazy: true,
         lazy: {
@@ -161,6 +121,10 @@ jQuery(document).ready(function ($) {
             loadOnTransitionStart: true
         },
         speed: 300,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
         thumbs: {
             swiper: swiperThumbnails
         },
@@ -199,29 +163,7 @@ jQuery(document).ready(function ($) {
         jQuery("#site-navigation").removeClass("toggled");
     });
 
-    /*Quote Modal JS */
-    jQuery("#quoteModal").on('show.bs.modal', function () {
-        var scrolly = window.scrollY;
-        jQuery("body").css("top", "-" + scrolly + "px");
-        jQuery(this).attr("data-top", scrolly);
-    });
-    jQuery('#quoteModal').on('hidden.bs.modal', function () {
-        var scrolly = jQuery(this).attr("data-top");
-        jQuery("body").css("top", "0px");
-        window.scrollTo(0, scrolly);
-    });
 
-    /* SEO Page Read More JS */
-    jQuery('#read-more').click(function () {
-        jQuery('.excerpt-content').css({ 'max-height': 'unset' });
-        jQuery(this).hide();
-    });
-
-    /*SEO Menu JS */
-    jQuery('#view_all_services').click(function () {
-        jQuery('.all-services').slideToggle(500);
-        jQuery('.all-services').css('display', 'block');
-    });
 
 
 });
@@ -231,18 +173,6 @@ jQuery(document).ready(function ($) {
 jQuery(window).on('load resize', function () {
     var window_size = jQuery(window).width();
     if (window_size <= 991) {
-
-        jQuery('body').on('click', '#primary-menu .menu-item-has-children', function () {
-            if ((jQuery(this).hasClass('active-sub-menu'))) {
-                jQuery(this).removeClass('active-sub-menu');
-                jQuery(this).find('.sub-menu').css('display', 'none');
-            } else {
-                jQuery(".menu-item-has-children").removeClass('active-sub-menu');
-                jQuery(".sub-menu").css('display', 'none');
-                jQuery(this).addClass('active-sub-menu');
-                jQuery(this).find('.sub-menu').css('display', 'block');
-            }
-        });
 
 
 

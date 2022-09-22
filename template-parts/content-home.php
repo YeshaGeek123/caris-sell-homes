@@ -111,7 +111,7 @@ global $phone,$phone_link;
                                         <div class="swiper-slide">
                                             <div class="floor-plan-card" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
                                                 <div class="floor-plan-slider-content white-text">
-                                                    <h3 class="h3-title"><?php the_title(); ?></h3>
+                                                    <h4 class="h4-title"><?php the_title(); ?></h4>
                                                     <span class="sub-title"><?php the_field('properties_details',$loop->ID()); ?></span>
                                                     <div class="floor-plan-text overflow-text" data-simplebar="init">
                                                         <?php the_field('properties_details_content',$loop->ID()); ?>

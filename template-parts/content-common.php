@@ -135,7 +135,7 @@
                     <div class="our-partner-wp">
                         <div class="our-partner-title white-text text-center">
                             <h2 class="h2-title"><?php the_field('home_our_partners_title', 10); ?></h2>
-                            <p><?php the_field('home_our_partners_sub_title'); ?></p>
+                            <p><?php the_field('home_our_partners_sub_title',10); ?></p>
                         </div>
                         <div class="row">
                             <?php

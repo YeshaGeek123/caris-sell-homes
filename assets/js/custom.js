@@ -58,10 +58,10 @@ jQuery(document).ready(function ($) {
                     slidesPerView: 4,
                 },
                 991: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                 },
                 0: {
-                    slidesPerView: 1.5,
+                    slidesPerView: 2,
                 },
             },
     });
@@ -86,10 +86,10 @@ jQuery(document).ready(function ($) {
                 slidesPerView: 1,
             },
             991: {
-                slidesPerView: 2,
+                slidesPerView: 1,
             },
             0: {
-                slidesPerView: 1.5,
+                slidesPerView: 1,
             },
         },
     });

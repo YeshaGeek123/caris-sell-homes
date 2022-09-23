@@ -37,7 +37,7 @@
 
                         <div class="floor-plan-list-heading">
                             <span class="name-wp">Unit name</span>
-                            <span class="size-wp">size</span>
+                            <span class="size-wp">Size</span>
                         </div>
                         
                         <div class="floor-plan-list-wp">

@@ -136,7 +136,7 @@ global $phone, $phone_link;
                                 if (have_rows('properties_actual_size')) :
                                     while (have_rows('properties_actual_size')) : the_row();
                                 ?>
-                                        <li><img src="<?php echo home_url() ?>/wp-content/themes/caris-sell-homes/assets/images/star-icon.svg" width="11" height="11" alt="star icon"><?php the_sub_field('properties_list_actual_size'); ?></li>
+                                        <li><?php the_sub_field('properties_list_actual_size'); ?></li>
                                 <?php
                                     endwhile;
                                 endif;

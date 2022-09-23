@@ -109,7 +109,7 @@ global $phone,$phone_link;
                                     while ( $loop->have_posts() ) : $loop->the_post(); 
                                     ?>
                                         <div class="swiper-slide">
-                                            <div class="floor-plan-card" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+                                            <div class="floor-plan-card back-img" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
                                                 <div class="floor-plan-slider-content white-text">
                                                     <h4 class="h4-title"><?php the_title(); ?></h4>
                                                     <span class="sub-title"><?php the_field('properties_details',$loop->ID()); ?></span>
@@ -149,7 +149,7 @@ global $phone,$phone_link;
                                         </span>
                                     </div>
                                 </div>
-                                <div class="swiper-scrollbar"></div>
+                                <div class="swiper-scrollbar for-des"></div>
                             </div>
                         </div>
                     </div>

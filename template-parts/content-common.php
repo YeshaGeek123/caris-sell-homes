@@ -4,12 +4,12 @@
     <div class="sec-wp">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-3">
+                <div class="col-lg-3 order-2 order-lg-1">
                     <div class="review-img-wp">
                         <div class="back-img" style="background-image: url('<?php the_field('home_reviews_image', 10); ?>);"></div>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-9 order-1 order-lg-2">
                     <div class="review-content white-text">
                         <h2 class="h2-title"><?php the_field('home_reviews_main_title', 10); ?></h2>
                         <?php
@@ -43,7 +43,7 @@
                                     ?>
 
                                 </div>
-                                <div class="swiper-dots for-des">
+                                <div class="swiper-dots">
                                     <div class="swiper-button-prev">
                                         <span class="icon-box">
 
@@ -113,7 +113,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="swiper-scrollbar"></div>
+                            <div class="swiper-scrollbar for-des"></div>
                         </div>
                     </div>
                 </div>
@@ -139,16 +139,22 @@
                         </div>
                         <div class="row">
                             <?php
-                            if (have_rows('home_our_partners_members', 10)) :
-                                while (have_rows('home_our_partners_members', 10)) : the_row();
+                            $our_partner_members = get_field('home_our_partners_members', 10);
+                            if(isset($our_partner_members) && !empty($our_partner_members )):
+                                if (have_rows('home_our_partners_members', 10)) :
+                                    while (have_rows('home_our_partners_members', 10)) : the_row();
+                                    $home_our_partners_members_image = get_sub_field('home_our_partners_members_image', 10);
+                                        if(isset($home_our_partners_members_image) && !empty($home_our_partners_members_image)):
                             ?>
-                                    <div class="col-lg-4">
-                                        <div class="our-partner-img-wp">
-                                            <div class="back-img" style="background-image: url('<?php the_sub_field('home_our_partners_members_image', 10); ?>');"></div>
-                                        </div>
-                                    </div>
-                            <?php
-                                endwhile;
+                                            <div class="col-lg-4 col-md-6">
+                                                <div class="our-partner-img-wp">
+                                                    <div class="back-img" style="background-image: url('<?php echo $home_our_partners_members_image;  ?>');"></div>
+                                                </div>
+                                            </div>
+                                <?php
+                                        endif;
+                                    endwhile;
+                                endif;
                             endif;
                             ?>
                         </div>

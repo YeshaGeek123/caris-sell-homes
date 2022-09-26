@@ -60,7 +60,7 @@ global $phone, $phone_link;
                                     </span>
                                 </div>
                             </div>
-                            <div class="swiper-scrollbar"></div>
+                            <div class="swiper-scrollbar for-des"></div>
                         </div>
                         <div class="swiper swiper-thumbnails">
                             <div class="swiper-wrapper">

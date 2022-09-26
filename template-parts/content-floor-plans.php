@@ -35,7 +35,7 @@
                             <h2 class="h2-title"><?php the_title(); ?></h2>
                         </div>
 
-                        <div class="floor-plan-list-heading">
+                        <div class="floor-plan-list-heading for-des">
                             <span class="name-wp">Unit name</span>
                             <span class="size-wp">Size</span>
                         </div>

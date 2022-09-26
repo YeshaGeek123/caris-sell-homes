@@ -21,7 +21,7 @@ jQuery(document).ready(function ($) {
         },
         breakpoints: {
             1200: {
-                slidesPerView: 3,
+                slidesPerView: 2,
             },
             991: {
                 slidesPerView: 2,
@@ -54,11 +54,14 @@ jQuery(document).ready(function ($) {
             prevEl: ".swiper-button-prev",
         },
             breakpoints: {
-                1200: {
-                    slidesPerView: 4,
+                1499: {
+                    slidesPerView: 3,
+                },
+                1199: {
+                    slidesPerView: 2,
                 },
                 991: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                 },
                 0: {
                     slidesPerView: 2,
@@ -102,7 +105,21 @@ jQuery(document).ready(function ($) {
         //slidesOffsetAfter: 50, 
         freeMode: true,
         watchSlidesVisibility: true,
-        watchSlidesProgress: true,       
+        watchSlidesProgress: true,
+        breakpoints: {
+            1200: {
+                slidesPerView: 10,
+            },
+            991: {
+                slidesPerView: 5,
+            },
+            575: {
+                slidesPerView: 3,
+            },
+            0: {
+                slidesPerView: 3,
+            },
+        },       
     });
     
     var swiperGallery = new Swiper('.swiper-gallery', {

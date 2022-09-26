@@ -1,6 +1,6 @@
 <!-- banner start -->
 <?php
-global $phone,$phone_link;
+global $phone, $phone_link;
 ?>
 <section class="main-banner back-img" style="background-image: url('<?php the_field('home_banner_image'); ?>');">
     <div class="sec-wp">
@@ -10,7 +10,7 @@ global $phone,$phone_link;
                     <div class="banner-content white-text text-center">
                         <?php
                         $home_banner_title = get_field('home_banner_title');
-                        if(isset($home_banner_title) && (!empty($home_banner_title))):
+                        if (isset($home_banner_title) && (!empty($home_banner_title))) :
                         ?>
                             <h1 class="h1-title"><?php echo $home_banner_title; ?></h1>
                         <?php
@@ -44,21 +44,21 @@ global $phone,$phone_link;
                         $home_about_us_title = get_field('home_about_us_title');
                         $home_about_us_sub_title = get_field('home_about_us_sub_title');
                         $home_about_us_content = get_field('home_about_us_content');
-                        if(isset($home_about_us_title) && (!empty($home_about_us_title))):
+                        if (isset($home_about_us_title) && (!empty($home_about_us_title))) :
                         ?>
                             <span class="small-text"><?php echo $home_about_us_title; ?></span>
                         <?php
                         endif;
                         ?>
                         <?php
-                        if(isset($home_about_us_sub_title ) && (!empty($home_about_us_sub_title ))):
+                        if (isset($home_about_us_sub_title) && (!empty($home_about_us_sub_title))) :
                         ?>
                             <h2 class="h2-title"><?php echo $home_about_us_sub_title; ?></h2>
                         <?php
                         endif;
                         ?>
                         <?php
-                        if(isset($home_about_us_content) && (!empty($home_about_us_content))):
+                        if (isset($home_about_us_content) && (!empty($home_about_us_content))) :
                         ?>
                             <div class="about-us-text overflow-text" data-simplebar="init">
                                 <?php echo $home_about_us_content; ?>
@@ -86,7 +86,7 @@ global $phone,$phone_link;
                         <span class="small-text"><?php the_field('home_floor_plans_title'); ?></span>
                         <h2 class="h2-title"><?php the_field('home_floor_plans_sub_title'); ?></h2>
                         <div class="featured-home-text">
-                           <?php the_field('home_floor_plans_content'); ?>
+                            <?php the_field('home_floor_plans_content'); ?>
                         </div>
                         <div class="featured-home-btn">
                             <a href="tel:<?php echo $phone_link; ?>" title="Call now <?php echo $phone; ?>" class="sec-btn">Call now</a>
@@ -99,22 +99,22 @@ global $phone,$phone_link;
                             <div class="swiper floor-plans-slider">
                                 <div class="swiper-wrapper">
                                     <?php
-                                    $args = array(  
+                                    $args = array(
                                         'post_type' => 'properties',
                                         'post_status' => 'publish',
-                                        'numberposts' => -1,  
-                                        'order' => 'ASC', 
+                                        'numberposts' => -1,
+                                        'order' => 'ASC',
                                     );
-                                    $loop = new WP_Query( $args ); 
-                                    while ( $loop->have_posts() ) : $loop->the_post(); 
+                                    $loop = new WP_Query($args);
+                                    while ($loop->have_posts()) : $loop->the_post();
                                     ?>
                                         <div class="swiper-slide">
                                             <div class="floor-plan-card back-img" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
                                                 <div class="floor-plan-slider-content white-text">
                                                     <h4 class="h4-title"><?php the_title(); ?></h4>
-                                                    <span class="sub-title"><?php the_field('properties_details',$loop->ID()); ?></span>
+                                                    <span class="sub-title"><?php the_field('properties_details', $loop->ID()); ?></span>
                                                     <div class="floor-plan-text overflow-text" data-simplebar="init">
-                                                        <?php the_field('properties_details_content',$loop->ID()); ?>
+                                                        <?php the_field('properties_details_content', $loop->ID()); ?>
                                                     </div>
                                                 </div>
                                                 <div class="read-more-wp">
@@ -134,7 +134,7 @@ global $phone,$phone_link;
                                         </div>
                                     <?php
                                     endwhile;
-                                    wp_reset_postdata(); 
+                                    wp_reset_postdata();
                                     ?>
                                 </div>
                                 <div class="swiper-dots for-des">
@@ -152,6 +152,7 @@ global $phone,$phone_link;
                                 <div class="swiper-scrollbar for-des"></div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
